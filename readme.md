@@ -102,6 +102,24 @@ docker compose logs
 * From Inside the Ubuntu VM: Open a web browser and navigate to http://localhost:5678.
 * From the Host Machine: If VirtualBox is configured with a Bridged Adapter or Port Forwarding (Port 5678), open your host browser and navigate to http://<VM_IP_ADDRESS>:5678.
 
+Because n8n runs inside a Docker container using a non-root `node` user (UID `1000`), the container needs permission to read and write to the local folders you mapped in the `compose.yaml` file. 
+
+
+## 🚀 Error Fixed
+If you see permission errors or if n8n fails to save workflows or docker would not able start the n8n (**keep restart**), run the following commands on your Ubuntu terminal to grant correct ownership to the container:
+
+```bash
+# Change ownership of the n8n data folder to the container's node user (UID 1000)
+sudo chown -R 1000:1000 /opt/stacks/n8n/data
+
+# Change ownership of the shared files folder if you plan to import/export files
+sudo chown -R 1000:1000 /opt/stacks/n8n/files
+
+# Ensure correct read/write permissions are applied
+sudo chmod -R 775 /opt/stacks/n8n/data /opt/stacks/n8n/files
+```
+
+> ⚠️ **Note:** If you haven't started the stack yet, the `data` and `files` folders might not exist. Docker will create them automatically when you run `docker compose up -d`, after which you should run these permission commands
 
 
 
