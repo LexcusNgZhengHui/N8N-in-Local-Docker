@@ -119,6 +119,17 @@ sudo chown -R 1000:1000 /opt/stacks/n8n/files
 sudo chmod -R 775 /opt/stacks/n8n/data /opt/stacks/n8n/files
 ```
 
+## 🌐 Official Project References
+
+A huge thank you to **Techno Tim** for providing such a clear visual automation roadmap. For deeper implementation details, consult the following verified channels:
+
+* **Official Video Tutorial:** (https://www.youtube.com/watch?v=gyn8bcOLdcA)
+* **Step-by-Step Documentation:** (https://technotim.com/posts/n8n-self-hosted/)
+* **Source Repository:** https://github.com/n8n-io/n8n
+
+
+
+
 > ⚠️ **Note:** If you haven't started the stack yet, the `data` and `files` folders might not exist. Docker will create them automatically when you run `docker compose up -d`, after which you should run these permission commands
 
 
