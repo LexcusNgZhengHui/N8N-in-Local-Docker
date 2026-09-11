@@ -102,8 +102,6 @@ docker compose logs
 * From Inside the Ubuntu VM: Open a web browser and navigate to http://localhost:5678.
 * From the Host Machine: If VirtualBox is configured with a Bridged Adapter or Port Forwarding (Port 5678), open your host browser and navigate to http://<VM_IP_ADDRESS>:5678.
 
-On your initial access, you will be prompted to create an administrator account to begin building workflows.
-------------------------------
 
 
 
